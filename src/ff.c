@@ -4056,7 +4056,9 @@ FRESULT f_forward (
 /*-----------------------------------------------------------------------*/
 /* Create file system on the logical drive                               */
 /*-----------------------------------------------------------------------*/
-#ifndef N_ROOTDIR
+#ifdef _N_ROOTDIR
+  #define N_ROOTDIR _N_ROOTDIR
+#else
   #define N_ROOTDIR	512 	/* Number of root directory entries for FAT12/16 */
 #endif
 
